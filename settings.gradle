@@ -1,1 +1,3 @@
 rootProject.name = 'spring-study'
+
+include 'oauth2'
