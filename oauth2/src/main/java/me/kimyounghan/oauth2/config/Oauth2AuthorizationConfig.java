@@ -12,7 +12,7 @@ public class Oauth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("testClientId")
-                .secret("testSecret")
+                .secret("{noop}testSecret")
                 .redirectUris("http://localhost:8081/oauth2/callback")
                 .authorizedGrantTypes("authorization_code")
                 .scopes("read", "write")
