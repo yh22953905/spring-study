@@ -1,3 +1,5 @@
 rootProject.name = 'spring-study'
 
 include 'oauth2'
+include 'grpc-interface'
+
