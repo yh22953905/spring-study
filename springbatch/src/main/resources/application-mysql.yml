@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306
+      username:
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+  batch:
+    job:
+      names: ${job.name:NONE}
