@@ -11,11 +11,16 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 단순히 실행해보는 Job
+ *
+ * @author 김영한
+ */
 @Slf4j
 @RequiredArgsConstructor
 @Configuration // Spring Batch의 모든 Job은 @Configuration으로 등록해서 사용
 public class SimpleJobConfiguration {
-    private static final String SIMPLE_JOB = "simpleJob";
+    private static final String SIMPLE_JOB_1 = "simpleJob";
     private static final String SIMPLE_STEP_1 = "simpleStep1";
 
     private final JobBuilderFactory jobBuilderFactory;
@@ -23,7 +28,7 @@ public class SimpleJobConfiguration {
 
     @Bean
     public Job simpleJob() {
-        return jobBuilderFactory.get(SIMPLE_JOB) // simpleJob이란 이름의 Batch Job을 생성, job의 이름은 별도로 지정하지 않고, 이렇게 Builder를 통해 지정
+        return jobBuilderFactory.get(SIMPLE_JOB_1) // simpleJob이란 이름의 Batch Job을 생성, job의 이름은 별도로 지정하지 않고, 이렇게 Builder를 통해 지정
             .start(simpleStep1())
             .build();
     }

@@ -12,19 +12,24 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 파라미터를 넣어 실행해보는 Job (BATCH_JOB_INSTANCE 학습)
+ *
+ * @author 김영한
+ */
 @Slf4j
 @RequiredArgsConstructor
 @Configuration // Spring Batch의 모든 Job은 @Configuration으로 등록해서 사용
 public class SimpleJob2Configuration {
-    private static final String SIMPLE_JOB = "simpleJob2";
-    private static final String SIMPLE_STEP_1 = "simpleStep2";
+    private static final String SIMPLE_JOB_2 = "simpleJob2";
+    private static final String SIMPLE_STEP_2 = "simpleStep2";
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
     @Bean
     public Job simpleJob2() {
-        return jobBuilderFactory.get(SIMPLE_JOB) // simpleJob이란 이름의 Batch Job을 생성, job의 이름은 별도로 지정하지 않고, 이렇게 Builder를 통해 지정
+        return jobBuilderFactory.get(SIMPLE_JOB_2) // simpleJob이란 이름의 Batch Job을 생성, job의 이름은 별도로 지정하지 않고, 이렇게 Builder를 통해 지정
             .start(simpleStep2(null))
             .build();
     }
