@@ -37,9 +37,9 @@ public class SimpleJob2Configuration {
     @Bean
     @JobScope
     public Step simpleStep2(@Value("#{jobParameters[requestDate]}") String requestDate) {
-        return stepBuilderFactory.get("simpleStep2") // simpleStep 이란 이름의 Batch Step 을 생성, step의 이름은 별도로 지정하지 않고, 이렇게 Builder를 통해 지정
+        return stepBuilderFactory.get(SIMPLE_STEP_2) // simpleStep 이란 이름의 Batch Step 을 생성, step의 이름은 별도로 지정하지 않고, 이렇게 Builder를 통해 지정
             .tasklet(((contribution, chunkContext) -> { // Step 안에서 수행될 기능들 명시, asklet은 Step안에서 단일로 수행될 커스텀한 기능들을 선언
-                log.info(">>>>> This is Step2");
+                log.info(">>>>> This is {}", SIMPLE_STEP_2);
                 log.info(">>>>> requestDate = {}", requestDate);
                 return RepeatStatus.FINISHED;
             })).build();
