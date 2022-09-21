@@ -1,4 +1,4 @@
-package me.kimyounghan.springbatch.job;
+package me.kimyounghan.springbatch.job.conditional;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
