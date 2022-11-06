@@ -1,10 +1,16 @@
 spring:
   datasource:
     hikari:
-      jdbc-url: jdbc:mysql://localhost:3306
-      username:
-      password:
+      jdbc-url: jdbc:mysql://localhost:3306/study
+      username: student
+      password: s@R7e^9W3sDR
       driver-class-name: com.mysql.jdbc.Driver
   batch:
     job:
       names: ${job.name:NONE}
+
+logging:
+  level:
+    org:
+      springframework:
+        batch: DEBUG
