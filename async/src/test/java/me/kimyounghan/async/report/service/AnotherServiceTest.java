@@ -30,8 +30,10 @@ class AnotherServiceTest {
 
     @Test
     void anotherService_성공() throws InterruptedException {
+        int size = 1_000;
+
         List<Long> ids = new ArrayList<>();
-        for (long i = 0; i < 10_000; i++) {
+        for (long i = 0; i < size; i++) {
             ids.add(i);
         }
 
@@ -39,7 +41,7 @@ class AnotherServiceTest {
         
         Thread.sleep(5_000L);
 
-        assertThat(savedReports.size()).isEqualTo(10_000);
+        assertThat(savedReports.size()).isEqualTo(size);
     }
 
     @Test

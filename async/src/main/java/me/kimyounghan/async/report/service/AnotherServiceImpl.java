@@ -1,10 +1,8 @@
 package me.kimyounghan.async.report.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import me.kimyounghan.async.report.model.Report;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,15 +30,4 @@ public class AnotherServiceImpl implements AnotherService {
 
         return savedReports;
     }
-
-//    @SneakyThrows
-//    @Async
-//    Report asyncSave(Long id) {
-//        Thread.sleep(1000L);
-//        log.info("##### thread name? - {}", Thread.currentThread().getName());
-//        log.info("##### id? - {}", id);
-//
-//        Report savedReport = asyncService.save(id);
-//        return savedReport;
-//    }
 }

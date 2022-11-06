@@ -2,22 +2,23 @@
 server:
   tomcat:
     threads:
-      max: 100
+      max: 10
 
 # DBCP ??
 spring:
   datasource:
-    dbcp2:
-      max-idle: 1
-      max-total: 1
-      min-idle: 1
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/async
+    username: root
+    password: etEq7^89k8^1
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 1
+      idle-timeout: 10
+    driver-class-name: com.mysql.jdbc.Driver
   sql:
     init:
       mode: never
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: false
+      ddl-auto: create
+    show-sql: true
